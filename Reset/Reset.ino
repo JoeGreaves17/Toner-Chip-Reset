@@ -9,7 +9,7 @@
 // Released to the public domain
 //
 
-#include <Wire.h>
+#include <Wire.h> // This library is included in the avr core (https://github.com/arduino/ArduinoCore-avr/tree/master/libraries/Wire)
 
 // the content to flash on the eeprom to reset the chip.
 // defines:
