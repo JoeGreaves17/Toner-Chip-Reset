@@ -27,7 +27,7 @@ circuit, read the chip memory and write it back so the toner can
 function again.
 
 For more information about why manufaturer include those chips, read
-the [about page](Original ABOUT.md).
+the [about page](Original%20ABOUT.md).
 
 ![Picture of the font circuit](images/front_circuit.jpg)
 
