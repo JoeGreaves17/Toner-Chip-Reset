@@ -11,11 +11,13 @@
 
 #include <Wire.h> // This library is included in the avr core (https://github.com/arduino/ArduinoCore-avr/tree/master/libraries/Wire)
 
+#define BAUD_RATE 9600
+
 // the content to flash on the eeprom to reset the chip.
 // defines:
 // 	* unsigned int dump_bin_len;
 // 	* unsigned char dump_bin[];
-#include "reset_bin.h"
+//#include "reset_bin.h"
 
 // Set current address:
 //	master send start condition
@@ -170,10 +172,7 @@ void eepromWrite(unsigned int eeprom, unsigned char data[],
 // initialize i2c bus after user input.
 void initialize(void) {
 
-	Serial.begin(115200);
-	while (!Serial.available()) {
-		; // wait for serial port to connect
-	}
+	Serial.begin(BAUD_RATE);
 	Serial.println("Let's start!");
 
 	// define the i2c bus speed
@@ -193,8 +192,8 @@ void work(void) {
 	unsigned int eeprom = 0x53;
 
 	eepromRead(eeprom);
-	eepromWrite(eeprom, dump_bin, dump_bin_len);
-	eepromRead(eeprom);
+	//eepromWrite(eeprom, dump_bin, dump_bin_len);
+	//eepromRead(eeprom);
 }
 
 void setup(void) {
