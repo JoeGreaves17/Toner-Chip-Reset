@@ -12,6 +12,7 @@
 #include <Wire.h>
 #include <Arduino.h>
 
+#define BAUD_RATE 9600
 const char version[] = "0.1.06";
 
 // scans devices from 50 to 800KHz I2C speeds.
@@ -217,7 +218,7 @@ void I2Cscan()
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(BAUD_RATE);
   Wire.begin();
   setSpeed('0');
   displayHelp();
